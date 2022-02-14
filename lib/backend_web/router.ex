@@ -24,7 +24,9 @@ defmodule BackendWeb.Router do
   scope "/api", BackendWeb do
     pipe_through :api
 
+    get "/categories/:id", CategoryController, :show
     get "/categories", CategoryController, :index
+    post "/categories", CategoryController, :create
   end
 
   # coveralls-ignore-start
