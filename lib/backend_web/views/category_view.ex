@@ -1,8 +1,12 @@
 defmodule BackendWeb.CategoryView do
   use BackendWeb, :view
 
-  def render("index.json", %{categories: cateogies}) do
-    render_many(cateogies, __MODULE__, "category.json")
+  def render("index.json", %{categories: categories}) do
+    render_many(categories, __MODULE__, "category.json")
+  end
+
+  def render("show.json", %{category: category}) do
+    render_one(category, __MODULE__, "category.json")
   end
 
   def render("category.json", %{category: category}) do
